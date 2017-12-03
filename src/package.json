@@ -1,0 +1,25 @@
+{
+  "name": "@yci/payments",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yc-ionic/payments.git"
+  },
+  "author": {
+    "name": "Yu Chen",
+    "email": "yu.chen@live.ie"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yc-ionic/payments.git/issues"
+  },
+  "main": "yci-payments.umd.js",
+  "module": "yci-payments.js",
+  "jsnext:main": "yci-payments.js",
+  "typings": "yci-payments.d.ts",
+  "peerDependencies": {
+  }
+}
