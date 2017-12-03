@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { Payments } from './service';
-import { Alipay } from './alipay';
 
 export * from './service';
 
@@ -23,7 +22,7 @@ export class PaymentsModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: PaymentsModule,
-      providers: [Payments, Alipay]
+      providers: [Payments]
     };
   }
 }

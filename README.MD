@@ -15,7 +15,7 @@
 
 ```typescript
 // Import your library
-import { CachedGetModule } from '@yci/payments';
+import { PaymentsModule } from '@yci/payments';
 
 @NgModule({
 
@@ -26,7 +26,7 @@ import { CachedGetModule } from '@yci/payments';
     ...
 
     // Specify your library as an import
-    CachedGetModule.forRoot()
+    PaymentsModule.forRoot()
   ],
   
   ...
@@ -39,27 +39,16 @@ export class AppModule { }
 Once your library is imported, you can use its service in your Angular application:
 
 ```ts
-import { CachedGet } from '@yci/payments';
-import 'rxjs/add/operator/map';
+import { Payments } from '@yci/payments';
 
-constructor(private cg: CachedGet) {
+constructor(private payments: Payments) {
 
-  cg.get('http://example.com/xxx')
-    .map(x => JSON.stringify(x))
-    .subscribe(x => {
-      // do your stuff
-    }, e => {
-      // handle errors
-    });
+  payments.addChannel('alipay', async charge => {
+    // ...
+  });
 
-  // with custom headers
-  cg.get('http://example.com/xxx', { 'Content-type': 'xxx' })
-    .map(x => JSON.stringify(x))
-    .subscribe(x => {
-      // do your stuff
-    }, e => {
-      // handle errors
-    });
+  // pay
+  payments.pay(target)
 
 }
 ```
